@@ -1,0 +1,52 @@
+import 'package:cashir_quiz/app/data/stylings.dart';
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+import '../controllers/home_controller.dart';
+
+class HomeView extends GetView<HomeController> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Obx(()=> controller.screens[controller.pageIndex.value]),
+      bottomNavigationBar: Material(
+        elevation: 20,
+        child: Obx(()=>
+          SalomonBottomBar(
+            
+            unselectedItemColor: Color(0xff34073d),
+            currentIndex: controller.pageIndex.value,
+            onTap: (i) {
+              controller.pageIndex.value = i;
+            },
+            items: [
+              /// Home
+              SalomonBottomBarItem(
+                icon: Icon(Icons.home),
+                title: Text("Home"),
+                selectedColor: AppTheme.blue,
+              ),
+
+              /// Quiz
+              SalomonBottomBarItem(
+                icon: Icon(Icons.laptop_chromebook_outlined),
+                title: Text("Quiz"),
+                selectedColor: AppTheme.blue,
+              ),
+
+              /// Survey
+              SalomonBottomBarItem(
+                icon: Icon(Icons.bar_chart_outlined),
+                title: Text("Survey"),
+                selectedColor: AppTheme.blue,
+              ),
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
