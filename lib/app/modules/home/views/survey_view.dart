@@ -107,7 +107,7 @@ Widget surveyCard(BuildContext context, List questions){
     onTap: () => Get.to(()=> HistoryView(), binding: HistoryBinding(), arguments: {'questions': questions}),
     child: Container(
       padding: EdgeInsets.all(20),
-      height: 100,
+      height: 90,
       margin: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         boxShadow: [
@@ -134,7 +134,7 @@ Widget surveyCard(BuildContext context, List questions){
             radius: 30,
             backgroundColor: AppTheme.white,
             child: CircleAvatar(
-              radius: 28,
+              radius: 24,
               backgroundColor: AppTheme.blue,
               child: Icon(Icons.directions_bus, color: AppTheme.white, ),
             ),

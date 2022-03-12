@@ -108,7 +108,7 @@ class WelcomeView extends GetView {
                             Text(
                               'Cashir Quiz',
                               textAlign: TextAlign.right,
-                              style: Theme.of(context).textTheme.headline1!.copyWith(color: AppTheme.white, fontSize: 40),
+                              style: Theme.of(context).textTheme.headline1!.copyWith(color: AppTheme.white, fontSize: 35),
                             ),
                             Text(
                               '10 Questions',
