@@ -1,5 +1,8 @@
+import 'package:cashir_quiz/app/data/alerts.dart';
 import 'package:cashir_quiz/app/data/images.dart';
 import 'package:cashir_quiz/app/data/stylings.dart';
+import 'package:cashir_quiz/app/modules/questions/bindings/questions_binding.dart';
+import 'package:cashir_quiz/app/modules/questions/views/questions_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -51,6 +54,14 @@ class WelcomeView extends GetView {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 color: AppTheme.blue,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blue.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
               ),
               child: Column(
                 children: [
@@ -88,7 +99,7 @@ class WelcomeView extends GetView {
                             side: BorderSide(color: AppTheme.white, width: 1),
                           ),
                           onPressed: () {
-                            print('Pressed');
+                            Get.to(()=> QuestionsView(), binding: QuestionsBinding());
                           },
                         ),
                         Column(
@@ -127,6 +138,9 @@ class WelcomeView extends GetView {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
+                        onTap: (){
+                          Get.to(()=> QuestionsView(), binding: QuestionsBinding());
+                        },
                         child: Container(
                           padding: EdgeInsets.all(15),
                           width: (Get.size.width/2)-30,
@@ -171,6 +185,9 @@ class WelcomeView extends GetView {
                         ),
                       ),
                       InkWell(
+                        onTap: (){
+                          QuizAlerts().error('Opps...', 'Questions on boats subject are unavailable', context);
+                        },
                         child: Container(
                           padding: EdgeInsets.all(15),
                           width: (Get.size.width/2)-30,
@@ -221,6 +238,9 @@ class WelcomeView extends GetView {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
+                        onTap: (){
+                          QuizAlerts().error('Opps...', 'Questions on bikes subject are unavailable', context);
+                        },
                         child: Container(
                           padding: EdgeInsets.all(15),
                           width: (Get.size.width/2)-30,
@@ -265,6 +285,9 @@ class WelcomeView extends GetView {
                         ),
                       ),
                       InkWell(
+                        onTap: (){
+                          QuizAlerts().error('Opps...', 'Questions on trains subject are unavailable', context);
+                        },
                         child: Container(
                           padding: EdgeInsets.all(15),
                           width: (Get.size.width/2)-30,

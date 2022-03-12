@@ -20,6 +20,7 @@ class HomeView extends GetView<HomeController> {
             currentIndex: controller.pageIndex.value,
             onTap: (i) {
               controller.pageIndex.value = i;
+              if(i==2) controller.loadHistory();
             },
             items: [
               /// Home
