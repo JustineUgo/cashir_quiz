@@ -40,6 +40,7 @@ flutter run
 
 ## Details
 
+* Framewort: [Flutter](https://flutter.dev/) > 2.5 with Null Safety
 * Architectural pattern: MVC(Model-View-Controller)
 * Storage(local): [GetStorage](https://pub.dev/packages/get_storage)
 * State management: [GetX](https://github.com/mobxjs/mobx.dart)
