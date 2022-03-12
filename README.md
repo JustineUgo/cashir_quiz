@@ -129,4 +129,4 @@ This is the starting point of the application. All the application level configu
 
 I will be happy to answer any questions that you may have on this project. 🙂
 
-Again to note, this is example can appear as over-architectured for what it is - but it is an example only. If you liked my work, don’t forget to ⭐ star the repo.
+If you liked my work, don’t forget to ⭐ star the repo.
