@@ -38,8 +38,11 @@ class WelcomeView extends GetView<HomeController> {
                   )
                 ]
               ),
-              CircleAvatar(
-                backgroundImage: AssetImage(PlaceholderImages.avatar),
+              InkWell(
+                onTap: ()=>controller.launchCashir(),
+                  child: CircleAvatar(
+                  backgroundImage: AssetImage(PlaceholderImages.avatar),
+                ),
               ),
             ]
           ),

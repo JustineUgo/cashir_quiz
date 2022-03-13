@@ -1,3 +1,4 @@
+import 'package:cashir_quiz/app/constants/end_points.dart';
 import 'package:cashir_quiz/app/modules/home/views/quiz_view.dart';
 import 'package:cashir_quiz/app/modules/home/views/survey_view.dart';
 import 'package:cashir_quiz/app/modules/home/views/welcome_view.dart';
@@ -5,6 +6,7 @@ import 'package:cashir_quiz/app/modules/questions/bindings/questions_binding.dar
 import 'package:cashir_quiz/app/modules/questions/views/questions_view.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeController extends GetxController {
   
@@ -55,4 +57,7 @@ class HomeController extends GetxController {
     history = storage.read('questions');  
   }
   
+  void launchCashir() async {
+    if (!await launch(EndPoint.cashir)) throw 'Could not launch ${EndPoint.cashir}';
+  }
 }

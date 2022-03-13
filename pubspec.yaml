@@ -15,6 +15,7 @@ dependencies:
   salomon_bottom_bar: 3.2.0  
   flutter: 
     sdk: flutter
+  url_launcher: 6.0.20 
 
 dev_dependencies: 
   flutter_launcher_icons: "^0.9.2"

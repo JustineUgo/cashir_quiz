@@ -7,8 +7,16 @@ This is a solution to an interview challenge from [cashir.app](https://cashir.ap
 </p>
 
 ## About Cashir
+Never worry about running out of cash. With Cashir, you can withdraw cash without going to the bank and this is one of many other benefits of being the bank.
 
 Get cash or transfer all for free without joining banking hall queues.
+
+* Cash withdrawals
+* Cash deposits
+* Cash transfers
+* Access loans
+* Manage transactions
+* Transact securely
 
 ## How to Use 
 
@@ -48,6 +56,7 @@ flutter run
 * Architectural pattern: MVC(Model-View-Controller)
 * Storage(local): [GetStorage](https://pub.dev/packages/get_storage)
 * State management: [GetX](https://github.com/mobxjs/mobx.dart)
+* API: https://opentdb.com/api.php?amount=10&category=28&type=multiple
 
 ## Folder Structure
 Here is the core folder structure which flutter provides.
