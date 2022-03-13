@@ -2,7 +2,7 @@
 
 This is a solution to an interview challenge from [cashir.app](https://cashir.app/). In this challenge I am to design a survey application to collect data from users, I am expected to get user responses and persist them locally. I am required to also get and display submitted responses.
 
-![alt text](https://github.com/JustineUgo/cashir_quiz/tree/main/assets/cashir.jpg?raw=true)
+![alt text](https://raw.githubusercontent.com/JustineUgo/cashir_quiz/main/assets/cashir.jpg)
 
 ## About Cashir
 
