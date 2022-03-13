@@ -1,15 +1,15 @@
 import 'package:cashir_quiz/app/constants/alerts.dart';
 import 'package:cashir_quiz/app/constants/images.dart';
 import 'package:cashir_quiz/app/constants/stylings.dart';
-import 'package:cashir_quiz/app/modules/questions/bindings/questions_binding.dart';
-import 'package:cashir_quiz/app/modules/questions/views/questions_view.dart';
+import 'package:cashir_quiz/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class WelcomeView extends GetView {
+class WelcomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeController());
     return Scaffold(
       appBar: PreferredSize( 
         preferredSize: Size.fromHeight(120.0),
@@ -30,9 +30,11 @@ class WelcomeView extends GetView {
                     'Welcome!',
                     style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.black.withOpacity(.7)),
                   ),
-                  Text(
-                    'Good morning,',
-                    style: Theme.of(context).textTheme.headline4,
+                  Obx(()=>
+                    Text(
+                      controller.greeting.value,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
                   )
                 ]
               ),
@@ -99,7 +101,8 @@ class WelcomeView extends GetView {
                             side: BorderSide(color: AppTheme.white, width: 1),
                           ),
                           onPressed: () {
-                            Get.to(()=> QuestionsView(), binding: QuestionsBinding());
+                            // Get.to(()=> QuestionsView(), binding: QuestionsBinding());
+                            QuizAlerts().confirm('This quiz contains 10 question\n', 'Proceed', 'Cancel', () => controller.goToQuiz(), () => Get.back(), context);
                           },
                         ),
                         Column(
@@ -139,7 +142,7 @@ class WelcomeView extends GetView {
                     children: [
                       InkWell(
                         onTap: (){
-                          Get.to(()=> QuestionsView(), binding: QuestionsBinding());
+                            QuizAlerts().confirm('This quiz contains 10 question\n', 'Proceed', 'Cancel', () => controller.goToQuiz(), () => Get.back(), context);
                         },
                         child: Container(
                           padding: EdgeInsets.all(15),

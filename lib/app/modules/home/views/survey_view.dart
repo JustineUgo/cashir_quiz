@@ -7,7 +7,6 @@ import 'package:cashir_quiz/app/modules/questions/models/question_model.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 class SurveyView extends GetView<HomeController> {
   @override
@@ -33,9 +32,11 @@ class SurveyView extends GetView<HomeController> {
                     'Welcome!',
                     style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.black.withOpacity(.7)),
                   ),
-                  Text(
-                    '${controller.greeting.value},',
-                    style: Theme.of(context).textTheme.headline4,
+                  Obx(()=>
+                    Text(
+                      controller.greeting.value,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
                   )
                 ]
               ),
@@ -69,9 +70,9 @@ class SurveyView extends GetView<HomeController> {
                       List questionsMap = controller.history![index];
                       List<Question> questions = [];
 
-                      questionsMap.forEach((element) { 
-                        questions.add(Question.fromMap(element));
-                      });
+                      for (var questionMap in questionsMap) { 
+                        questions.add(Question.fromMap(questionMap));
+                      }
                       return surveyCard(context, questions);
                     }else{
                       return Center(
@@ -91,11 +92,10 @@ class SurveyView extends GetView<HomeController> {
   }
 }
 
-Widget surveyCard(BuildContext context, List questions){
+Widget surveyCard(BuildContext context, List<Question> questions){
 
-  DateTime dateTime = DateTime.now();
-  final format = DateFormat('HH:mm | dd MMM');
-  final timeStamp = format.format(dateTime);
+  var timeStamp = questions[0].date_answered;
+
   int answered = 10;
   int score = 0;
 
@@ -161,9 +161,19 @@ Widget surveyCard(BuildContext context, List questions){
             ]
           ),
           Spacer(),
-          Text(
-            (score*10).toString() + '%',
-            style: Theme.of(context).textTheme.headline4!.copyWith(color: AppTheme.white, fontSize: 12),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                (score*10).toString() + '%',
+                style: Theme.of(context).textTheme.headline4!.copyWith(color: AppTheme.white, fontSize: 12),
+              ),
+              Text(
+                '$timeStamp',
+                style: Theme.of(context).textTheme.headline4!.copyWith(color: AppTheme.white, fontSize: 10),
+              ),
+            ],
           )
         ]
       ),

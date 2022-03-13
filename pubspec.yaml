@@ -8,6 +8,7 @@ environment:
 dependencies: 
   cool_alert: 1.1.0
   cupertino_icons: ^1.0.2
+  fancy_on_boarding : 1.8.0-nullsafety.0
   get: 4.6.1
   get_storage: 2.0.3
   intl: 0.17.0
@@ -34,4 +35,5 @@ flutter:
   assets:
     - assets/
     - assets/flare/
+    - assets/svg/
 

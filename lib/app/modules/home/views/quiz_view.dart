@@ -31,9 +31,11 @@ class QuizView extends GetView<HomeController> {
                     'Welcome!',
                     style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.black.withOpacity(.7)),
                   ),
-                  Text(
-                    '${controller.greeting.value},',
-                    style: Theme.of(context).textTheme.headline4,
+                  Obx(()=>
+                    Text(
+                      controller.greeting.value,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
                   )
                 ]
               ),

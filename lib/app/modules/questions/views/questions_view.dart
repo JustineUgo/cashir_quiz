@@ -130,7 +130,7 @@ Widget count(int index, QuestionsController controller){
 
 Widget questionCard(BuildContext context, int questionIndex, Question question, QuestionsController controller){
   int number = questionIndex+1;
-  String? selected = question.selected;
+  // String? selected = question.selected;
 
   String questionText = question.question;
   List<String> options = [...question.incorrect_answers, question.correct_answer];

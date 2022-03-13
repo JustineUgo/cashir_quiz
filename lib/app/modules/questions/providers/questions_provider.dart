@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:cashir_quiz/app/constants/end_points.dart';
 import 'package:get/get.dart';

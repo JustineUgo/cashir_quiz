@@ -1,3 +1,4 @@
+import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,16 +9,15 @@ class OnboardingView extends GetView<OnboardingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('OnboardingView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'OnboardingView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: FancyOnBoarding(
+        doneButtonText: "Done",
+        skipButtonText: "Skip",
+        pageList: controller.pageList,
+        onDoneButtonPressed: () =>
+            controller.seenIntro(),
+        onSkipButtonPressed: () =>
+            controller.seenIntro(),
+      )
     );
   }
 }

@@ -16,7 +16,7 @@ class HomeView extends GetView<HomeController> {
         child: Obx(()=>
           SalomonBottomBar(
             
-            unselectedItemColor: Color(0xff34073d),
+            unselectedItemColor: Color(0xff4682B4),
             currentIndex: controller.pageIndex.value,
             onTap: (i) {
               controller.pageIndex.value = i;

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:collection/collection.dart';
+import 'package:flutter/foundation.dart';
 
 class Question {
 
@@ -8,18 +8,25 @@ class Question {
   final String type;
   final String difficulty;
   final String question;
+  // ignore: non_constant_identifier_names
   final String correct_answer;
+  // ignore: non_constant_identifier_names
   final List<String> incorrect_answers;
   String? selected;
-
+  // ignore: non_constant_identifier_names
+  String? date_answered;
   Question({
     required this.category,
     required this.type,
     required this.difficulty,
     required this.question,
+  // ignore: non_constant_identifier_names
     required this.correct_answer,
+  // ignore: non_constant_identifier_names
     required this.incorrect_answers,
     this.selected,
+  // ignore: non_constant_identifier_names
+    this.date_answered,
   });
 
 
@@ -28,9 +35,13 @@ class Question {
     String? type,
     String? difficulty,
     String? question,
+  // ignore: non_constant_identifier_names
     String? correct_answer,
+  // ignore: non_constant_identifier_names
     List<String>? incorrect_answers,
     String? selected,
+  // ignore: non_constant_identifier_names
+    String? date_answered,
   }) {
     return Question(
       category: category ?? this.category,
@@ -40,6 +51,7 @@ class Question {
       correct_answer: correct_answer ?? this.correct_answer,
       incorrect_answers: incorrect_answers ?? this.incorrect_answers,
       selected: selected ?? this.selected,
+      date_answered: date_answered ?? this.date_answered,
     );
   }
 
@@ -52,6 +64,7 @@ class Question {
       'correct_answer': correct_answer,
       'incorrect_answers': incorrect_answers,
       'selected': selected,
+      'date_answered': date_answered,
     };
   }
 
@@ -63,7 +76,8 @@ class Question {
       question: map['question'] ?? '',
       correct_answer: map['correct_answer'] ?? '',
       incorrect_answers: List<String>.from(map['incorrect_answers']),
-      selected: map['selected'] ?? '',
+      selected: map['selected'],
+      date_answered: map['date_answered'],
     );
   }
 
@@ -73,13 +87,12 @@ class Question {
 
   @override
   String toString() {
-    return 'Question(category: $category, type: $type, difficulty: $difficulty, question: $question, correct_answer: $correct_answer, incorrect_answers: $incorrect_answers, selected: $selected)';
+    return 'Question(category: $category, type: $type, difficulty: $difficulty, question: $question, correct_answer: $correct_answer, incorrect_answers: $incorrect_answers, selected: $selected, date_answered: $date_answered)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-    final listEquals = const DeepCollectionEquality().equals;
   
     return other is Question &&
       other.category == category &&
@@ -88,7 +101,8 @@ class Question {
       other.question == question &&
       other.correct_answer == correct_answer &&
       listEquals(other.incorrect_answers, incorrect_answers) &&
-      other.selected == selected;
+      other.selected == selected &&
+      other.date_answered == date_answered;
   }
 
   @override
@@ -99,6 +113,7 @@ class Question {
       question.hashCode ^
       correct_answer.hashCode ^
       incorrect_answers.hashCode ^
-      selected.hashCode;
+      selected.hashCode ^
+      date_answered.hashCode;
   }
 }

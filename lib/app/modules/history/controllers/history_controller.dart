@@ -12,14 +12,11 @@ class HistoryController extends GetxController {
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {}
 
+  //calc score of each quiz
   calculateScore(){
     int score = 0;
     for(Question question in questions){

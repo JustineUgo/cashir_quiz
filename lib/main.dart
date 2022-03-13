@@ -19,10 +19,12 @@ void main() async{
     DeviceOrientation.portraitDown,
   ]);
 
+  var storage = GetStorage();
+
   runApp(
     GetMaterialApp(
       title: "Cashir Quiz",
-      initialRoute: AppPages.INITIAL,
+      initialRoute: storage.read('seen_intro') == true?AppPages.INITIAL : AppPages.INTRO,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
       locale: Get.deviceLocale,

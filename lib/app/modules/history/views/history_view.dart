@@ -20,12 +20,12 @@ class HistoryView extends GetView<HistoryController> {
         leadingWidth: 80,
       ),
       body: Container(
-      width: Get.size.width,
-      height: Get.size.height,
-      decoration: BoxDecoration(
-        color: AppTheme.greyColor
-      ),
-      child: Column(
+        width: Get.size.width,
+        height: Get.size.height,
+        decoration: BoxDecoration(
+          color: AppTheme.greyColor
+        ),
+        child: Column(
         children: [
           Expanded(
             child: Container(
