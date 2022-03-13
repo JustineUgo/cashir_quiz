@@ -29,7 +29,7 @@ To check if you have flutter installed, run
 ```
 flutter doctor 
 ```
-if you dont have flutter install and setup, follow this: [How to setup Flutter](https://docs.flutter.dev/get-started/install)
+if you don't have flutter installed and setup, follow this: [How to setup Flutter](https://docs.flutter.dev/get-started/install)
 
 
 ## How to Use 
