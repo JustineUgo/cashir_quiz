@@ -18,6 +18,20 @@ Get cash or transfer all for free without joining banking hall queues.
 * Manage transactions
 * Transact securely
 
+## Flutter
+
+Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase.
+
+This project is built with flutter.
+
+To check if you have flutter installed, run
+
+```
+flutter doctor 
+```
+if you dont have flutter install and setup, follow this: [How to setup Flutter](https://docs.flutter.dev/get-started/install)
+
+
 ## How to Use 
 
 **Step 1:**
