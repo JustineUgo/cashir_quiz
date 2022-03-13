@@ -1,5 +1,5 @@
-import 'package:cashir_quiz/app/data/images.dart';
-import 'package:cashir_quiz/app/data/stylings.dart';
+import 'package:cashir_quiz/app/constants/images.dart';
+import 'package:cashir_quiz/app/constants/stylings.dart';
 import 'package:cashir_quiz/app/modules/home/controllers/home_controller.dart';
 import 'package:cashir_quiz/app/modules/questions/bindings/questions_binding.dart';
 import 'package:cashir_quiz/app/modules/questions/views/questions_view.dart';

@@ -10,7 +10,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: 4.6.1
   get_storage: 2.0.3
-  http: 0.13.4 
   intl: 0.17.0
   salomon_bottom_bar: 3.2.0  
   flutter: 

@@ -1,7 +1,6 @@
 import 'dart:convert';
 
-import 'package:cashir_quiz/app/data/end_points.dart';
-import 'package:cashir_quiz/app/modules/questions/models/question_model.dart';
+import 'package:cashir_quiz/app/constants/end_points.dart';
 import 'package:get/get.dart';
 
 class QuestionsProvider extends GetConnect {

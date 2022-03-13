@@ -1,5 +1,5 @@
-import 'package:cashir_quiz/app/data/alerts.dart';
-import 'package:cashir_quiz/app/data/stylings.dart';
+import 'package:cashir_quiz/app/constants/alerts.dart';
+import 'package:cashir_quiz/app/constants/stylings.dart';
 import 'package:cashir_quiz/app/modules/questions/models/question_model.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class QuestionsView extends GetView<QuestionsController> {
           onTap: () {
             QuizAlerts().confirm('Do you want to submit', 'Submit', 'Cancel', controller.saveAnswers,Get.back, context);
           }, 
-          child: Icon(Icons.chevron_left)),
+          child: Icon(Icons.arrow_back)),
       ),
       body: Container(
         width: Get.size.width,
@@ -150,7 +150,7 @@ Widget questionCard(BuildContext context, int questionIndex, Question question, 
         Center(
           child: Text(
             '$number.\n$questionText',
-            style: Theme.of(context).textTheme.headline2,
+            style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 18),
           ),
         ),
         SizedBox(height: 20),

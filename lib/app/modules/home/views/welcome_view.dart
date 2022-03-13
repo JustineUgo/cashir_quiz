@@ -1,6 +1,6 @@
-import 'package:cashir_quiz/app/data/alerts.dart';
-import 'package:cashir_quiz/app/data/images.dart';
-import 'package:cashir_quiz/app/data/stylings.dart';
+import 'package:cashir_quiz/app/constants/alerts.dart';
+import 'package:cashir_quiz/app/constants/images.dart';
+import 'package:cashir_quiz/app/constants/stylings.dart';
 import 'package:cashir_quiz/app/modules/questions/bindings/questions_binding.dart';
 import 'package:cashir_quiz/app/modules/questions/views/questions_view.dart';
 import 'package:flutter/material.dart';

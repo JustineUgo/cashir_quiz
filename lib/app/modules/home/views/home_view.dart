@@ -1,4 +1,4 @@
-import 'package:cashir_quiz/app/data/stylings.dart';
+import 'package:cashir_quiz/app/constants/stylings.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

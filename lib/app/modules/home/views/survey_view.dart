@@ -1,5 +1,5 @@
-import 'package:cashir_quiz/app/data/images.dart';
-import 'package:cashir_quiz/app/data/stylings.dart';
+import 'package:cashir_quiz/app/constants/images.dart';
+import 'package:cashir_quiz/app/constants/stylings.dart';
 import 'package:cashir_quiz/app/modules/history/bindings/history_binding.dart';
 import 'package:cashir_quiz/app/modules/history/views/history_view.dart';
 import 'package:cashir_quiz/app/modules/home/controllers/home_controller.dart';
@@ -57,23 +57,29 @@ class SurveyView extends GetView<HomeController> {
               Container(
                 child: Text(
                   'History',
-                  style: Theme.of(context).textTheme.headline1
+                  style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 22)
                 ),
               ),
               SizedBox(height: 30,),
               Expanded(
                 child: ListView.builder(
-                  itemCount: controller.history == null ?0 :controller.history!.length,
+                  itemCount: controller.history == null ?1 :controller.history!.length,
                   itemBuilder: (context, index){
-                    List questionsMap = controller.history![index];
-                    print(index);
-                    print(questionsMap);print('\n\n\n\n');
-                    List<Question> questions = [];
+                    if(controller.history!=null){
+                      List questionsMap = controller.history![index];
+                      List<Question> questions = [];
 
-                    questionsMap.forEach((element) { 
-                      questions.add(Question.fromMap(element));
-                    });
-                    return surveyCard(context, questions);
+                      questionsMap.forEach((element) { 
+                        questions.add(Question.fromMap(element));
+                      });
+                      return surveyCard(context, questions);
+                    }else{
+                      return Center(
+                        child: Text(
+                          'When you take a quiz, they will appear here.'
+                        ),
+                      );
+                    }
                   },
                 ), 
               )
@@ -146,11 +152,11 @@ Widget surveyCard(BuildContext context, List questions){
             children: [
               Text(
                 'Vehicle',
-                style: Theme.of(context).textTheme.headline2!.copyWith(color: AppTheme.white),
+                style: Theme.of(context).textTheme.headline2!.copyWith(color: AppTheme.white, fontSize: 16),
               ),
               Text(
                 'Answered $answered question(s)',
-                style: Theme.of(context).textTheme.headline4!.copyWith(color: AppTheme.white, fontSize: 12),
+                style: Theme.of(context).textTheme.headline4!.copyWith(color: AppTheme.white, fontSize: 10),
               )
             ]
           ),
